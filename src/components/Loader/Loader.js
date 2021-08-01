@@ -11,6 +11,7 @@ export default function Spiner() {
         height={60}
         width={60}
         timeout={3000}
+        className={s.Loader}
       />
     </div>
   );
