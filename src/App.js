@@ -37,7 +37,7 @@ function App() {
         }
 
         setImages((prevState) => [...prevState, ...fetchImagesArray]);
-        setReqStatus("idle");
+        setReqStatus("resolve");
 
         if (page > 1) {
           window.scrollTo({
@@ -60,9 +60,7 @@ function App() {
   };
 
   const onLoadButton = () => {
-    setPage((prevState) => {
-      return prevState + 1;
-    });
+    setPage((prevPage) => prevPage + 1);
   };
 
   const onImageClick = (largeImageURL) => {
@@ -73,7 +71,7 @@ function App() {
     setOpenImageUrl(null);
   };
 
-  const fillArray = reqStatus === "idle" && images.length > 0;
+  const fillArray = images.length > 0;
   const currentStatus = reqStatus === "loading";
 
   return (
